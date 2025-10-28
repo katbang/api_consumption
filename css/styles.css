@@ -1,0 +1,131 @@
+@import "variables.css";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+h1, h2 {
+    color: var(--colourBgComplementary);
+    font-family: var(--fontHeadline);
+}
+
+p {
+    max-width: 65ch;
+    font-family: var(--fontMain);
+    font-weight: light;
+    color: var(--colourText);
+    
+    strong {
+        font-weight: bold;
+    }
+}
+
+header {
+    background-color: var(--colourBgHeader);
+
+    h1 {
+        padding: 1rem 1rem 0.6rem 1rem;
+    }
+   
+    nav {
+        padding: 0.5rem 1rem;
+        color: var(--colourBgComplementary);
+        background-color: var(--colourBgNav);
+
+        ul {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 0.5rem;
+            list-style: none;
+
+            @media (min-width: 768px) {
+                gap: 2rem;
+                flex-flow: row nowrap;
+            }
+    
+            a {
+                color: var(--colourBgComplementary);
+                text-decoration: none;
+                font-family: var(--fontMain)
+            }
+        }
+    }
+}
+
+main > section {
+    display: grid;
+    gap: 1rem;
+    margin: 1rem 0;
+
+    article {
+        width: 95vw;
+        margin: 0 auto;
+        color: var(--colourBgComplementary);
+        background-color: var(--colourBgComplementary);
+        border: solid 1px var(--colourCardHeader);
+        border-radius: 6px;
+        overflow: hidden;
+    
+        header {
+            background-color: var(--colourCardHeader);
+
+            h2 {
+                padding: 0.5rem 1rem 0.2rem 1rem;
+                font-size: 1.8rem;
+            }
+        }
+    
+        section {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+
+            @media (min-width: 768px) {
+                flex-flow: row nowrap;
+                gap: 0.5rem;
+                list-style: none;
+                align-items: flex-start;
+            }
+    
+            img {
+                margin: 0.3rem 0 0 0;
+                max-height: 300px;
+
+                @media (min-width: 768px) {
+                margin: 0;
+            }
+            }
+
+            div {
+                display: flex;
+                flex-flow: column nowrap;
+                gap: 0.4rem;
+                padding: 0.6rem;
+
+                .summary {
+                    margin-bottom: 0.7rem;
+                }
+            }
+    
+        }
+    
+    }
+}
+
+footer {
+    background-color: var(--colourBgHeader);
+    p {
+        margin: 0 auto;
+        padding: 0.5rem 0;
+        color: var(--colourBgComplementary);
+        text-align: center;
+    }
+}
+
+.active {
+    color: var(--colourAccent);
+    text-decoration: underline;
+}
