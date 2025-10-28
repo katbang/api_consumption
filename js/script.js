@@ -1,6 +1,6 @@
 import { API_KEY } from "./info.js";
 
-export const options = {
+const options = {
   method: 'GET',
   headers: {
     accept: 'application/json',
