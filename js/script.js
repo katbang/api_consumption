@@ -1,4 +1,4 @@
-import { BASE_URL, API_KEY } from "./info.js";
+import { API_KEY } from "./info.js";
 
 export const options = {
   method: 'GET',
@@ -10,7 +10,7 @@ export const options = {
 
 const listName = document.querySelector(".movie-list").getAttribute("data-movie-list");
 
-fetch(`${BASE_URL}/${listName}?language=en-US&page=1`, options)
+fetch(`https://api.themoviedb.org/3/movie/${listName}?language=en-US&page=1`, options)
   .then(res => res.json())
   .then(data => {
     const movieList = document.createDocumentFragment();
